@@ -1,13 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
   :root {
     --background: #F0F2F5;
     --shape: #FFFFFF;
 
     --red: #E52E4D;
+    --green: #33CC95;
     --blue: #5429CC; 
 
     --blue-light: #6933FF;
