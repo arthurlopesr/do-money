@@ -15,7 +15,7 @@ export function Summarry(props: SummarryProps) {
           <p>Entradas</p>
           <img src={incomeImg} alt="Entrada" />
         </header>
-        <strong>R$10.000,00</strong>
+        <strong>R$12.000,00</strong>
       </div>
 
       <div>
@@ -23,7 +23,7 @@ export function Summarry(props: SummarryProps) {
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>-R$4.000,00 </strong>
+        <strong>R$2.000,00 </strong>
       </div>
 
       <div className="highlightGreen">
@@ -31,7 +31,7 @@ export function Summarry(props: SummarryProps) {
           <p>Total</p>
           <img src={totalImg} alt="Total" />
         </header>
-        <strong>R$1000,00</strong>
+        <strong>R$10.000,00</strong>
       </div>
 
     </Container>
