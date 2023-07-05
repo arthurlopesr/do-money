@@ -1,3 +1,4 @@
+import { TransactionTable } from "../../transactionTable/TransactionTable";
 import { Summarry } from "../summary/Summary";
 import { Container } from "./styles";
 
@@ -9,6 +10,7 @@ export function Dashboard(props : DashboardProps){
     return(
         <Container>
           <Summarry/>
+          <TransactionTable/>
         </Container>
     )
 }
