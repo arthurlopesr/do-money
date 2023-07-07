@@ -9,16 +9,16 @@ interface SummarryProps {
 }
 export function Summarry(props: SummarryProps) {
 
-  const { transactions } = useTransactions;
+  const { transactions } = useTransactions();
 
   const summary = transactions.reduce((acc, transaction) => {
 
     if (transaction.type === 'deposit') {
-      acc.deposits += transaction.amouth;
-      acc.total += transaction.amouth;
+      acc.deposits += transaction.amount;
+      acc.total += transaction.amount;
     } else {
-      acc.withdraws += transaction.amouth;
-      acc.total -= transaction.amouth;
+      acc.withdraws += transaction.amount;
+      acc.total -= transaction.amount;
     }
 
     return acc;
