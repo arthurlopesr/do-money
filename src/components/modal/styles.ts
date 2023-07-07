@@ -61,7 +61,7 @@ export const ContainerButton = styled.div`
 
 interface ModalProps {
   isActive: boolean;
-  activeColor: 'green' | 'red';
+  activeButtonColor: 'green' | 'red';
 }
 
 const colors = {
@@ -75,7 +75,7 @@ export const RadioBox = styled.button<ModalProps>`
   border: 1px solid #d7d7d7;
 
   background: ${(props) => props.isActive
-    ? transparentize(0.9, colors[props.activeColor])
+    ? transparentize(0.9, colors[props.activeButtonColor])
     : 'trasparent'
   };
   display: flex;

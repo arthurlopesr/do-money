@@ -1,32 +1,38 @@
+import { Container, ContainerButton, RadioBox } from './styles';
+import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import closeImg from '../../assets/close.svg';
 import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
-import { Container, ContainerButton, RadioBox } from './styles';
-import { FormEvent, useState } from 'react';
-import { api } from '../../services/api';
+import { useTransactions } from '../../hooks/useTransactions';
 
 interface ModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
 }
 export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
+  const { createTransaction } = useTransactions();
+
   const [title, setTitle] = useState('');
-  const [value, setValue] = useState(0);
+  const [amount, setAmount = useState(0);
   const [category, setCategory] = useState('');
   const [type, setType] = useState('deposit');
 
-  function handleCreateNewTransaction(event: FormEvent) {
-    event.preventDefault()
+  async function handleCreateNewTransaction(event: FormEvent) {
+    event.preventDefault();
 
-    const data = {
-      title,
-      value,
+    await createTransaction({
+      amount,
       category,
+      title,
       type
-    };
+    })
 
-    api.post('/transactions', data)
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
+    onRequestClose();
   }
 
   return (
@@ -57,8 +63,8 @@ export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
         <input
           type='number'
           placeholder='Valor'
-          value={value}
-          onChange={e => setValue(Number(e.target.value))}
+          value={amount}
+          onChange={e => setAmount(Number(e.target.value))}
         />
 
         <ContainerButton>
@@ -66,7 +72,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
             type='button'
             onClick={() => { setType('deposit') }}
             isActive={type === 'deposit'}
-            activeColor='green'
+            activeButtonColor='green'
           >
             <img src={incomeImg} alt="Entrada" />
             <span>Entrada</span>
@@ -76,7 +82,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: ModalProps) {
             type='button'
             onClick={() => { setType('withdraw') }}
             isActive={type === 'withdraw'}
-            activeColor='red'
+            activeButtonColor='red'
           >
             <img src={outcomeImg} alt="Saída" />
             <span>Saída</span>

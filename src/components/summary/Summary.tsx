@@ -2,20 +2,48 @@ import { Container } from "./styles";
 import incomeImg from "../../assets/income.svg"
 import outcomeImg from "../../assets/outcome.svg"
 import totalImg from '../../assets/total.svg'
+import { useTransactions } from "../../hooks/useTransactions";
 
 interface SummarryProps {
 
 }
 export function Summarry(props: SummarryProps) {
+
+  const { transactions } = useTransactions;
+
+  const summary = transactions.reduce((acc, transaction) => {
+
+    if (transaction.type === 'deposit') {
+      acc.deposits += transaction.amouth;
+      acc.total += transaction.amouth;
+    } else {
+      acc.withdraws += transaction.amouth;
+      acc.total -= transaction.amouth;
+    }
+
+    return acc;
+  }, {
+    deposits: 0,
+    withdraws: 0,
+    total: 0,
+  })
+
   return (
     <Container>
-
       <div>
+
         <header>
           <p>Entradas</p>
           <img src={incomeImg} alt="Entrada" />
         </header>
-        <strong>R$12.000,00</strong>
+
+        <strong>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(summary.deposits)}
+        </strong>
+
       </div>
 
       <div>
@@ -23,15 +51,30 @@ export function Summarry(props: SummarryProps) {
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>R$2.000,00 </strong>
+
+        <strong>-
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(summary.withdraws)}
+        </strong>
+
       </div>
 
       <div className="highlightGreen">
+
         <header>
           <p>Total</p>
           <img src={totalImg} alt="Total" />
         </header>
-        <strong>R$10.000,00</strong>
+
+        <strong>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(summary.total)}
+        </strong>
+
       </div>
 
     </Container>
