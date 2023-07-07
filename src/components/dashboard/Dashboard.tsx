@@ -4,13 +4,13 @@ import { Container } from "./styles";
 
 
 interface DashboardProps {
-
 }
 export function Dashboard(props : DashboardProps){
     return(
         <Container>
           <Summarry/>
-          <TransactionTable/>
+          <TransactionTable
+          />
         </Container>
     )
 }
