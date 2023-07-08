@@ -31,4 +31,22 @@ Você pode acessar o design inicial deesse projeto pelo link abaixo:
 
 &nbsp;
 
-<p align="center">Feito com 💙 por Arthur Lopes</p>
+<div align="center">
+ <a href="https://app.rocketseat.com.br/me/arthur-lopes">
+   <img align="center" style="border-radius: 100%;" src="https://github.com/arthurlopesr.png" width="100px" alt=""/>
+  </a>
+</div>
+<br/>
+<p align="center">Desenvolvido por Arthur Lopes 🚀 </p> 
+<p align="center">Entre em contato!</p>
+<div align="center">
+<a href="https://www.linkedin.com/in/arthur-lopesr/" target="_blank">
+    <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>&nbsp;&nbsp;
+ <a href="https://www.instagram.com/arthur_lopesr/" target="_blank">
+    <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white" />        
+  </a>&nbsp;&nbsp;
+ <a href="mailto:arthurlopr12@gmail.com">
+    <img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" />        
+  </a>&nbsp;&nbsp; 
+</div>
