@@ -14,7 +14,7 @@ Projeto inicial Ignite ReactJs, na <a href="https://rocketseat.com.br/"><em>Rock
 
 &nbsp;
 
-### 🛠️ Nesse projeto foi utilizado
+### 🛠️ Nesse projeto foi utilizado:
 
 * [React](https://pt-br.reactjs.org/)
 * [Create React App](https://create-react-app.dev/)
